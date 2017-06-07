@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    /*[name~=''] {
+        color: red
+    }*/
+    
+    div[class~='box1'] {
+        color: rebeccapurple;
+    }
+    
+    div[class^='box'] {
+        color: fuchsia;
+    }
+    
+    [name='22'] {
+        color: darkorange
+    }
+    
+    [name='1'] {
+        background-color: pink;
+    }
+    
+    input[class='button1'] {
+        width: 100px;
+        height: 100px;
+        color: red;
+        transition: all 1s;
+    }
+    
+    .bigbox {
+        width: 200px;
+        height: 400px;
+        position: relative;
+        background: url(./1.jpg)no-repeat center;
+        background-size: 100%;
+        float: left;
+        margin-left: 20px;
+    }
+    
+    .bigbox::before {
+        content: "神盾局特工";
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        line-height: 400px;
+        width: 200px;
+        height: 400px;
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease 0s;
+        background-color: black;
+        opacity: 0;
+    }
+    
+    .bigbox:hover::before {
+        opacity: 0.3;
+    }
+    
+    section {
+        margin-top: 500px;
+        width: 100px;
+        height: 100px;
+        border-radius: 0 100px 0 0;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="box" name='打搅好'>asdasd</div>
+    <p name=''>1231</p>
+    <p name='22'>☆☆☆☆☆</p>
+    <p name=''>1231</p>
+    <div class="box box1 box2">asdasd</div>
+    <div class="box box1 bo2">asdasd</div>
+    <div class="bo1x bx1 bx2">asdasd</div>
+    <div class="b1ox ox1 box2">asdasd</div>
+    <input type="button" name="1" value="das" class="button1 button2" />
+    <input type="button" name="2" value="sad" class="butt2on1 button2" />
+    <input type="button" name="3" value="ssd" class="butt3on1 button2" />
+    <input type="button" name="4" value="aas" class="bu2tton1 button2" />
+    <input type="button" name="5" value="asda" class="button1 button2" />
+    <div class="bigbox"></div>
+    <div class="bigbox"></div>
+    <div class="bigbox"></div>
+    <div class="bigbox"></div>
+
+    <section>
+
+    </section>
+</body>
+
+</html>

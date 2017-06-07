@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    img {
+        height: 360px;
+    }
+    
+    div {
+        overflow: hidden;
+    }
+    
+    ul {
+        /*margin-top: 200px;*/
+        float: left;
+        width: 1620px;
+        height: 360px;
+        transform-style: preserve-3d;
+        perspective: 1500px;
+        position: relative;
+    }
+    
+    li {
+        width: 540px;
+        height: 360px;
+        overflow: hidden;
+        float: left;
+        position: absolute;
+        transition: all 1.5s ease 0s;
+        /*visibility: hidden;*/
+    }
+    
+    li:nth-child(1) {
+        left: 540px;
+        transform: translateX(-350px) translateZ(-200px) rotateY(45deg);
+    }
+    
+    li:nth-child(2) {
+        left: 540px;
+    }
+    
+    li:nth-child(3) {
+        left: 540px;
+        transform: translateX(350px) translateZ(-200px) rotateY(-45deg);
+    }
+    
+    p {
+        width: 100px;
+        height: 40px;
+        background-color: pink;
+        opacity: 0.3;
+        text-align: center;
+        line-height: 40px;
+    }
+</style>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="./11.jpg" alt="第一张"></li>
+            <li><img src="./22.jpg" alt="第二张"></li>
+            <li><img src="./33.jpg" alt="第三张"></li>
+        </ul>
+
+    </div>
+    <p class="left">上一张</p>
+    <p class="right">下一张</p>
+
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var btnleft = $('.left');
+    var btnright = $('.right');
+
+    function left() {
+        var num = 0;
+        btnleft.click(function() {
+            
+            $('li:eq(0)').css({
+                transform: "translateX(0px) translateZ(0px) rotateY(0deg)",
+            });
+            console.log(num)
+            num += 5;
+
+            $('li:eq(1)').css({
+                transform: "translateX(350px) translateZ(-200px) rotateY(-45deg)",
+            });
+            console.log(num)
+            if (num == 11) {
+                num = 1
+            }
+            $('li:eq(2)').css({
+                transform: "translateX(-350px) translateZ(-200px) rotateY(45deg)",
+            })
+            
+        })
+    }
+    left();
+</script>
+
+</html>

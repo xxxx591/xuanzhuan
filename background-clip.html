@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div[class^='box'] {
+        width: 200px;
+        height: 200px;
+        border: 8px dashed black;
+        line-height: 200px;
+        margin: 20px;
+        padding: 10px;
+        background: url(./1.jpg)no-repeat center;
+        background-size: cover;
+        float: left;
+        transition: all 1s cubic-bezier(0, 0, 1, 1.4) 0s;
+    }
+    
+    .box::after {
+        content: "大家好";
+        text-align: center;
+        font-size: 15px;
+    }
+    
+    .box2:hover {
+        transform: translate(20px, 20px)
+    }
+    
+    .box2 {
+        background-origin: padding-box;
+    }
+    
+    .box3 {
+        background-origin: border-box;
+    }
+    
+    .box4 {
+        background-clip: border-box;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+</body>
+
+</html>

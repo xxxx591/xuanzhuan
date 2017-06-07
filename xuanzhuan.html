@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 92px;
+        height: 92px;
+        /*margin-left: 10px;*/
+        background-color: none;
+        border-radius: 50%;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        z-index: 10;
+        transition: all 0.5s linear 0s;
+    }
+    
+    img {
+        transition: all 0.5s linear 0s;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    section:hover img {
+        transform: rotate(360deg);
+    }
+    
+    section:hover div {
+        background-color: #7EE5FA;
+    }
+</style>
+
+<body>
+    <section>
+
+        <div></div><img src="./2.png" alt="">
+    </section>
+</body>
+
+</html>

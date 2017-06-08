@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .stage {
+        perspective: 1000px;
+        width: 800px;
+        height: 400px;
+        /*margin-left: auto;
+        margin-right: auto;
+        padding: 100px 50px;*/
+        transition: all 1s ease 0s;
+        margin: 0 auto;
+    }
+    
+    .box {
+        width: 800px;
+        height: 400px;
+        /*margin-left: -64px;、*/
+        transform-style: preserve-3d;
+        position: relative;
+        transition: all 1s ease 0s;
+        /*left: 50%;*/
+        /*overflow: hidden;*/
+    }
+    
+    p {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 300px;
+        top: 100px;
+        /*倒影*/
+        /*-webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%);*/
+        -webkit-box-reflect: below 10px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%);
+    }
+    
+    p:nth-child(1) {
+        background-color: palegoldenrod;
+    }
+    
+    p:nth-child(2) {
+        background-color: pink;
+    }
+    
+    p:nth-child(3) {
+        background-color: goldenrod;
+    }
+    
+    p:nth-child(4) {
+        background-color: greenyellow;
+    }
+    
+    p:nth-child(5) {
+        background-color: blue;
+    }
+    
+    p:nth-child(6) {
+        background-color: black;
+    }
+    
+    p:nth-child(7) {
+        background-color: red;
+    }
+    
+    p:nth-child(8) {
+        background-color: rebeccapurple;
+    }
+    
+    p:nth-child(9) {
+        background-color: darkcyan;
+        /*transform: rotateY() translateZ()*/
+    }
+</style>
+
+<body>
+    <div class="stage"> 点击点击点击
+        <div class="box">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var lock = true;
+    $('.stage .box p').each(function(i) {
+        $(this).css({
+            transform: "rotateY(" + 40 * i + "deg) translateZ(350px)"
+        });
+        // console.log(this)
+    })
+
+    var index = 1;
+    $('.box').click(function() {
+        if (!lock) return;
+        $(this).css('transform', 'rotateY(' + index * 40 + 'deg)')
+        index++;
+        lock = false;
+        setTimeout(function() {
+            lock = true;
+        }, 1000)
+    })
+</script>
+
+
+</html>

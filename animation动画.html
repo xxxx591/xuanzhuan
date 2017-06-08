@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 300px;
+        height: 300px;
+        float: left;
+        margin: 30px auto;
+        border: 1px solid pink;
+        position: relative;
+    }
+    
+    .stage {
+        width: 239px;
+        height: 150px;
+        background: url(./page.png);
+        margin-top: 150px;
+    }
+    
+    .leaf {
+        position: absolute;
+        background: url(./page.png)0 -150px;
+        width: 90px;
+        height: 65px;
+        top: -150px;
+        transition: all 1s linear 0s;
+        animation: leafmove 5s linear 0s infinite;
+    }
+    
+    .trigon {
+        width: 170px;
+        height: 170px;
+        background: url(./page.png);
+        background-position: 0 -311px;
+        position: absolute;
+        bottom: 0;
+        z-index: 999;
+        transition: all 1s linear 0s;
+    }
+    
+    .circle {
+        width: 137px;
+        height: 136px;
+        bottom: 0;
+        left: 70px;
+        background: url(./page.png);
+        background-position: 0 -482px;
+        position: absolute;
+        transition: all 1s linear 0s;
+    }
+    
+    .square {
+        width: 96px;
+        height: 96px;
+        bottom: 0;
+        z-index: 9999;
+        left: 140px;
+        background: url(./page.png);
+        background-position: 0 -215px;
+        position: absolute;
+        transition: all 1s linear 0s;
+    }
+    
+    @keyframes leafmove {
+        0% {
+            top: -150px;
+            left: 0;
+        }
+        20% {
+            top: 0px;
+            left: 100px;
+        }
+        40% {
+            top: 100px;
+            left: 50px;
+        }
+        60% {
+            top: 150px;
+            left: 100px;
+            opacity: .8;
+        }
+        80% {
+            top: 222px;
+            left: 130px;
+            opacity: .4;
+        }
+        100% {
+            top: 282px;
+            left: 100px;
+            opacity: 0;
+        }
+    }
+    
+    .bulb {
+        width: 191px;
+        height: 267px;
+        background: url(./page.png);
+        background-position: 0 -620px;
+        position: absolute;
+        left: 74px;
+        top: 100px;
+    }
+    
+    .light {
+        width: 341px;
+        height: 256px;
+        background: url(./page.png);
+        background-position: 0 -887px;
+        position: absolute;
+        opacity: 0;
+        /*transition: all 1s linear 0s;*/
+        animation: faguang 2s linear 1s infinite alternate;
+    }
+    
+    @keyframes faguang {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div>
+        <p class="stage"></p>
+        <p class="leaf"></p>
+    </div>
+    <div>
+        <p class="trigon"></p>
+        <p class="circle"></p>
+        <p class="square"></p>
+    </div>
+    <div>
+        <p class="bulb"></p>
+        <p class="light"></p>
+    </div>
+    <div></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    var i = 0;
+
+    setInterval(function() {
+        i++;
+        $('.trigon').css("transform", "rotate(" + i * 360 + "deg)");
+        $('.square').css("transform", "rotate(" + i * 360 + "deg)");
+    }, 4000)
+    setInterval(function() {
+        i++;
+        $('.circle').css("transform", "rotate(" + i * 360 + "deg)");
+    }, 5000)
+</script>
+
+</html>
